@@ -1,0 +1,5 @@
+export const AUTH_TYPES = {
+  INITIALIZE: "INITIALIZE",
+  LOGIN: "LOGIN",
+  LOGOUT: "LOGOUT",
+};
