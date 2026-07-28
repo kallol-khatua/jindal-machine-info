@@ -27,6 +27,10 @@ app.use(compression());
 
 app.use(morgan("dev"));
 
+app.get("/", (req, res) => {
+    return res.status(200).send("OK");
+})
+
 app.use("/api/auth", authRoutes);
 app.use("/api/plants", plantRoutes);
 app.use("/api/areas", areaRoutes);
