@@ -6,6 +6,9 @@ export default function PlantGrid({
 
 }) {
 
+    // console.log(plants)
+    // console.log(plants?.data)
+
     return (
 
         <div
@@ -14,7 +17,7 @@ export default function PlantGrid({
 
         >
 
-            {plants.map(
+            {plants?.data.map(
 
                 plant => (
 

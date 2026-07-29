@@ -1,119 +1,53 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Flame } from "lucide-react";
+
+const stats = [
+  { label: "Installed Pellet Capacity", value: "9", unit: "MTPA" },
+  { label: "Production Since", value: "2009", unit: "Commercial start-up" },
+  { label: "Process Areas", value: "PP-1 / PP-2", unit: "Plant sections" },
+];
 
 export default function HeroSection() {
+  return (
+    <section className="blueprint-bg relative overflow-hidden bg-gray-200 border-b border-white/5">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-steel-400">
+          <Flame className="h-3.5 w-3.5 text-amber-500" />
+          Keonjhar District &middot; Odisha, India
+        </div>
+        <h1 className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[1.05] text-black sm:text-6xl">
+          Jindal Steel <span className="text-amber-500">Pellet Plant</span>,
+          Barbil
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-500">
+          A digital asset register for every machine and instrument across our
+          plant sections. Built for the people who run the floor — scan a QR tag
+          on any equipment and get its full record in seconds.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center gap-4">
+          <Link
+            to="/plants"
+            className="btn-primary rounded-md hover:bg-amber-600 bg-amber-500 px-6 py-2 text-base"
+          >
+            <div>Browse the Plant</div>
+          </Link>
+        </div>
 
-    return (
-
-        <section
-            className="relative h-[88vh] overflow-hidden"
-        >
-
-            {/* Background */}
-
-            <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80"
-                alt="Plant"
-                className="absolute inset-0 h-full w-full object-cover"
-            />
-
-            {/* Overlay */}
-
-            <div className="absolute inset-0 bg-black/60" />
-
-            {/* Content */}
-
-            <div
-                className="relative mx-auto flex h-full max-w-7xl items-center px-6"
-            >
-
-                <motion.div
-
-                    initial={{
-                        opacity: 0,
-                        y: 40
-                    }}
-
-                    animate={{
-                        opacity: 1,
-                        y: 0
-                    }}
-
-                    transition={{
-                        duration: 0.8
-                    }}
-
-                    className="max-w-3xl text-white"
-                >
-
-                    <p
-                        className="mb-4 text-lg text-blue-300"
-                    >
-                        Digital Machine Information Portal
-                    </p>
-
-                    <h1
-                        className="mb-6 text-6xl font-bold leading-tight"
-                    >
-                        Jindal Steel
-
-                        <br />
-
-                        Pellet Plant
-
-                        <span className="text-orange-400">
-
-                            {" "}Barbil
-
-                        </span>
-
-                    </h1>
-
-                    <p
-                        className="mb-10 text-xl leading-9 text-slate-200"
-                    >
-                        Browse machines,
-                        instrumentation,
-                        plant areas,
-                        and equipment
-                        information using
-                        QR codes or
-                        intuitive navigation.
-                    </p>
-
-                    <div
-                        className="flex flex-wrap gap-4"
-                    >
-
-                        <Link
-                            to="/plants/pp1"
-                            className="flex items-center gap-2 rounded-lg bg-blue-700 px-7 py-4 text-lg font-semibold hover:bg-blue-800"
-                        >
-
-                            Explore PP1
-
-                            <ArrowRight size={20} />
-
-                        </Link>
-
-                        <Link
-                            to="/plants/pp2"
-                            className="rounded-lg border border-white px-7 py-4 text-lg hover:bg-white hover:text-black"
-                        >
-
-                            Explore PP2
-
-                        </Link>
-
-                    </div>
-
-                </motion.div>
-
+        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-black/10 bg-black/15 sm:grid-cols-3">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-graphite-950 px-6 py-6">
+              <div className="font-display text-3xl font-semibold text-black">
+                {s.value}
+              </div>
+              <div className="mt-1 font-mono text-[11px] uppercase tracking-wider text-amber-500">
+                {s.unit}
+              </div>
+              <div className="mt-2 text-sm text-gray-500">{s.label}</div>
             </div>
-
-        </section>
-
-    );
-
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

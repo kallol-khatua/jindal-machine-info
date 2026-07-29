@@ -1,79 +1,23 @@
-import { Factory } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const plants = [
-
-    {
-        name: "pp1",
-        description: "Production Plant 1",
-    },
-
-    {
-        name: "pp2",
-        description: "Production Plant 2",
-    }
-
-];
-
 export default function PlantCards() {
-
-    return (
-
-        <section className="bg-slate-100 py-24">
-
-            <div className="mx-auto max-w-7xl px-6">
-
-                <h2
-                    className="mb-14 text-center text-4xl font-bold"
-                >
-
-                    Explore Plant Areas
-
-                </h2>
-
-                <div
-                    className="grid gap-10 md:grid-cols-2"
-                >
-
-                    {plants.map((plant) => (
-
-                        <Link
-                            key={plant.name}
-                            to={`/plants/${plant.name}`}
-                            className="rounded-2xl bg-white p-10 shadow-lg transition hover:-translate-y-2 hover:shadow-xl"
-                        >
-
-                            <Factory
-                                size={42}
-                                className="mb-6 text-blue-700"
-                            />
-
-                            <h3
-                                className="mb-2 text-3xl font-bold"
-                            >
-
-                                {plant.name}
-
-                            </h3>
-
-                            <p
-                                className="text-slate-500"
-                            >
-
-                                {plant.description}
-
-                            </p>
-
-                        </Link>
-
-                    ))}
-
-                </div>
-
-            </div>
-
-        </section>
-
-    );
-
+  return (
+    <section className="mx-auto bg-gray-200 px-4 py-16 text-center sm:px-6 sm:py-20">
+      <h2 className="text-3xl font-semibold text-gray-900">
+        Start with a plant section
+      </h2>
+      <p className="mx-auto mt-3 max-w-xl text-gray-600">
+        Choose PP1 or PP2 to see the process areas set up under it, then drill
+        down to any machine or instrument.
+      </p>
+      <div className="mt-15">
+        <Link
+          to="/plants"
+          className="btn-primary bg-amber-500 hover:bg-amber-600 rounded-md px-6 py-3 text-black"
+        >
+          Browse Plant Areas
+        </Link>
+      </div>
+    </section>
+  );
 }

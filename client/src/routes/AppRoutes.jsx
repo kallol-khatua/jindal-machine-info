@@ -6,6 +6,7 @@ import AdminLayout from "../layouts/AdminLayout";
 import ProtectedRoute from "./ProtectedRoute";
 
 import Home from "../pages/public/Home";
+import Team from "../pages/public/Team"
 import About from "../pages/public/About";
 import Plants from "../pages/public/Plants";
 import Areas from "../pages/public/Areas";
@@ -24,6 +25,7 @@ export default function AppRoutes() {
 
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/about" element={<About />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/plants/:plant" element={<Areas />} />

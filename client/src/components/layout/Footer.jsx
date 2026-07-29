@@ -39,13 +39,7 @@ export default function Footer() {
 
                         <br />
 
-                        <Link to="/plants/PP1">PP1</Link>
-
-                        <br />
-
-                        <Link to="/plants/PP2">PP2</Link>
-
-                        <br />
+                        
 
                         <Link to="/about">About</Link>
 
