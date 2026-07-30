@@ -8,6 +8,7 @@ import api from "./api";
 export const getAreas = async (plantId) => {
 
     const params = {};
+    console.log("Area")
 
     if (plantId) {
 
@@ -23,9 +24,11 @@ export const getAreas = async (plantId) => {
 
     );
 
+    console.log(response)
     return response.data.data;
 
 };
+
 
 /**
  * Get single area
